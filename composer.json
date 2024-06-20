@@ -1,0 +1,13 @@
+{
+    "name": "pyproject/myapp",
+    "description": "Diploma project",
+    "type": "library",
+    "require": {
+        "phpseclib/phpseclib": "3.0.x-dev"
+    },
+    "require-dev": {
+        "phpseclib/phpseclib": "3.0.x-dev"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}

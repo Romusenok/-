@@ -1,0 +1,587 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.top-container {
+    display: flex;
+    height: 7%;
+    background-color: #dbac6e;
+}
+
+.left-container {
+    width: 40%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ln_topbar_nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+
+.ln_topbar_nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+
+.ln_topbar_nav ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: #b62711;;
+}
+
+.ln_topbar_nav ul li a {
+    font-size: x-large;
+    padding: 10px; /* Добавляем отступы для визуального разделения */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #b62711; /* Цвет текста ссылок */
+    display: block; /* Делаем ссылки блочными элементами, чтобы они занимали всю ширину */
+    border-bottom: 1px solid #ccc; /* Добавляем границу снизу */
+    transition: background-color 0.3s ease; /* Добавляем анимацию */
+    margin-right: 10px; /* Добавляем отступ справа */
+}
+
+.ln_topbar_nav ul li a:last-child {
+    border-bottom: none; /* Убираем границу у последней ссылки */
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+.ln_topbar_nav ul li a:hover {
+    background-color: #db9841; /* Изменяем цвет фона при наведении */
+    color: #ca1b00; /* Изменяем цвет текста на синий */
+    background-color: #db9841; /* Изменяем цвет фона при наведении */
+}
+
+/* Стили для контейнера списка жанров */
+#genreContainer {
+    display: none; /* По умолчанию список скрыт */
+    position: absolute; /* Позиционирование списка */
+    top: 42px; /* Изменено значение top */
+    left: 0;
+    width: 100%; /* Ширина списка */
+    background-color: #dbac6e; /* Белый фон */
+    border: 1px solid #ccc; /* Тонкая серая граница */
+    padding: 10px; /* Отступы внутри списка */
+    z-index: 1; /* Список отображается поверх других элементов */
+    display: grid; /* Используем grid для создания столбцов */
+    grid-template-columns: repeat(5, 1fr); /* Создаем 5 столбцов равной ширины */
+    grid-gap: 10px; /* Добавляем отступы между столбцами */
+  }
+  
+  /* Стили для элементов списка жанров */
+  .genre-list li {
+    list-style: none; /* Убираем маркеры списка */
+    margin: 0;
+    padding: 5px;
+    text-align: center; /* Выравниваем текст по центру */
+    display: inline-block; /* Изменяем display на inline-block */
+    width: 20%; /* Устанавливаем ширину элементов списка */
+  }
+  
+  /* Стили для ссылок в списке жанров */
+  .genre-list li a {
+    font-size: large;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #b62711; /* Черный цвет текста */
+    display: block; /* Делаем ссылки блочными элементами */
+  }
+  
+  /* Стили для выделения при наведении */
+  .genre-list li a:hover {
+    background-color: #db9841; /* Изменяем цвет фона при наведении */
+  }
+
+.middle-container {
+    display: flex; /* Включаем flexbox */
+    justify-content: center; /* Выравниваем элементы по горизонтали по центру */
+    align-items: center; /* Выравниваем элементы по вертикали по центру */
+    height: 100%; /* Добавляем высоту для контейнера */
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для формы поиска */
+.search-form {
+    display: flex; /* Размещаем элементы формы внутри flex-контейнера */
+    padding: 10px; /* Добавляем отступы вокруг элементов формы */
+    transition: all 0.3s ease; /* Добавляем анимацию */
+}
+
+.search-form input[type="text"] {
+    font-size: large;
+    flex: 1; /* Устанавливаем ширину поля ввода равной оставшемуся пространству в контейнере */
+    margin-right: 10px; /* Добавляем отступ между полем ввода и кнопкой */
+    padding: 10px; /* Добавляем отступы */
+    border: 1px solid #ccc; /* Добавляем границу */
+    border-radius: 5px 0 0 5px; /* Скругляем углы */
+}
+
+.search-form button {
+    font-size: large;
+    background-color: #007bff; /* Цвет фона кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 0 5px 5px 0; /* Скругляем углы кнопки */
+    cursor: pointer; /* Устанавливаем курсор указывающий на кнопку */
+    padding: 10px; /* Добавляем отступы */
+}
+
+.search-form:hover {
+    background-color: #db9841; /* Изменяем цвет фона при наведении */
+  }
+
+.search-form button:active {
+background-color: #007bff; /* Изменяем цвет фона при нажатии */
+color: #fff; /* Изменяем цвет текста на белый */
+}
+
+.right-container {
+    width: 19.5%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Выравниваем содержимое по центру по горизонтали */
+    display: flex; /* Используем flexbox для выравнивания по вертикали */
+    justify-content: center; /* Выравниваем по центру по вертикали */
+    align-items: center;
+
+}
+
+/* Стили для ссылок в правом контейнере */
+.right-container a {
+    font-size: x-large;
+    display: inline-block;
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: #b62711; /* Черный цвет текста */
+    padding: 10px; /* Добавляем отступы */
+  }
+  
+  /* Стили для выделения при наведении */
+  .right-container a:hover {
+    color: #ca1b00;
+    background-color: #db9841; /* Изменяем цвет фона при наведении */
+  }
+
+.right-content {
+    display: inline-block; /* Делаем содержимое блочным элементом, чтобы можно было центрировать */
+}
+
+.modal {
+    display: none; /* По умолчанию модальное окно скрыто */
+    position: fixed; /* Позиционирование фиксированное, чтобы окно оставалось на месте при прокрутке страницы */
+    z-index: 1; /* Установите z-index выше, чем у других элементов на странице, чтобы модальное окно было поверх остального содержимого */
+    left: 0;
+    top: 0;
+    width: 100%; /* 100% ширина */
+    height: 100%; /* 100% высота */
+    overflow: auto; /* Добавьте прокрутку, если содержимое модального окна превышает размер экрана */
+    background-color: rgba(0,0,0,0.4); /* Черный полупрозрачный фон */
+}
+
+/* Стили для содержимого модального окна */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Выравнивание по центру на 15% от верхнего края */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ширина содержимого */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+    border-radius: 5px; /* Скругляем углы */
+    background-color: #f5f5f5; /* Изменяем цвет фона */
+    transition: all 0.3s ease; /* Добавляем анимацию */
+    display: flex; /* Используем flexbox для выравнивания по центру */
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    align-items: center; /* Выравниваем элементы по горизонтали по центру */
+}
+
+.modal-content form {
+    width: 100%; /* Обеспечиваем ширину формы 100% от родительского контейнера */
+    margin: 20px 0; /* Добавляем отступы между формами */
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    font-size: large;
+    width: calc(100% - 20px); /* Устанавливаем ширину с учетом отступов */
+    padding: 10px; /* Добавляем отступы */
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+    border: 1px solid #ccc; /* Добавляем границу */
+    border-radius: 5px; /* Скругляем углы */
+}
+
+.modal-content button[type="submit"] {
+    background-color: #007bff; /* Синий цвет фона */
+    color: #fff; /* Белый цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Добавляем отступы */
+    border-radius: 5px; /* Скругляем углы */
+    cursor: pointer; /* Устанавливаем курсор указывающий на кнопку */
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #0067cc; /* Изменяем цвет фона при наведении */
+}
+
+  
+/* Кнопка для закрытия модального окна */
+.close {
+    color: #aaaaaa;
+    float: right; /* Перемещаем крестик вправо */
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bxslider {
+    background-color: transparent !important;
+}
+
+.main-container {
+    flex: 1; /* Этот блок будет занимать всё доступное пространство по высоте */
+    background-color: #785d48;
+}
+
+.main-sub-container {
+    width: 80%;
+    padding: 10px; /* Уменьшаем общие отступы */
+    background-color: #724228;
+    margin: 0 auto; /* Выравниваем по центру по горизонтали */
+    display: flex;
+    justify-content: space-between; /* Добавляем отступы между дочерними контейнерами */
+}
+
+.main-sub-container-2 {
+    width: 80%;
+    padding: 10px; /* Уменьшаем общие отступы */
+    background-color: #724228;
+    margin: 0 auto; /* Выравниваем по центру по горизонтали */
+    display: flex;
+    justify-content: space-between; /* Добавляем отступы между дочерними контейнерами */
+    flex-direction: column;
+}
+
+.table-container {
+    width: 75%;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Стили для информации о пользователях */
+.info {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+.sub-container {
+    padding: 10px; /* Небольшие отступы внутри контейнеров */
+    justify-content: center;
+    align-items: center;
+}
+
+.bw-book-card {
+    height: 125px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-img {
+    float: left;
+    margin-right: 10px;
+}
+
+.book-img img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Чтобы изображение вписывалось в размеры блока */
+}
+
+.bw-title-wr {
+    overflow: hidden; /* Чтобы предотвратить выход за пределы блока */
+}
+
+.bw-title {
+    font-size: 22px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bw-author {
+    font-size: medium;
+    color: #666;
+}
+
+.bl-genre {
+    font-size: medium;
+    color: #999;
+    margin-right: 5px;
+}
+
+.bw-genre,
+.bw-author {
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+
+.select-book,
+.count-views {
+    display: none; /* Скрываем скрытые элементы */
+}
+
+.banner-container {
+    width: 100%; /* Ширина 100% */
+    height: 325px; /* Высота 250px */
+}
+
+.sub-container1 {
+    flex: 0 0 65%; /* Первый контейнер занимает 65% ширины */
+    background-color: transparent; /* Цвет фона для первого контейнера */
+}
+  
+.sub-container2 {
+    flex: 0 0 27%; /* Второй контейнер занимает 25% ширины */
+    background-color: transparent; /* Цвет фона для второго контейнера */
+    justify-content: right;
+
+}
+
+.book-list {
+    display: flex; /* Устанавливаем родительский контейнер как flex-контейнер */
+    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+}
+
+.book-item {
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    display: inline-block; /* Элементы списка выстраиваются в ряд */
+    width: 297px; /* Ширина элемента списка, вычитаем отступы между элементами */
+    margin-right: 20px; /* Отступ между элементами */
+    margin-bottom: 20px; /* Отступ снизу */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff; /* Цвет фона */
+    border: 1px solid #ddd; /* Граница */
+    padding: 10px; /* Внутренний отступ */
+}
+
+.bl-list {
+    width: 95%;
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.bl-item {
+    margin-bottom: 20px; /* Добавляем отступ снизу между элементами */
+    border: 1px solid #ddd; /* Добавляем рамку */
+    padding: 10px; /* Добавляем внутренние отступы */
+    width: 100%; /* Ширина элемента */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+    overflow: hidden; /* Предотвращаем выход контента за пределы блока */
+    background-color: white;
+}
+
+.book-img-square {
+    width: 120px; /* Фиксированная ширина изображения */
+    height: 120px; /* Фиксированная высота изображения */
+    overflow: hidden; /* Чтобы изображения не выходили за границы блока */
+    float: left; /* Выравниваем изображение слева */
+    margin-right: 10px; /* Добавляем отступ справа для создания промежутка между изображением и текстом */
+}
+
+.book-img-square img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Чтобы изображение вписывалось в размеры блока */
+}
+
+.bl-info {
+    overflow: hidden; /* Предотвращаем выход текста за пределы блока */
+}
+
+.bl-title {
+    font-size: 22px;
+    color: black;
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Размещаем название книги на новой строке */
+    margin-bottom: 5px; /* Добавляем отступ снизу */
+}
+
+.bl-author {
+    font-size: medium;
+    color: white;
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Размещаем имя автора на новой строке */
+}
+
+.bl-genres a {
+    font-size: medium;
+    color: black;
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-right: 5px; /* Добавляем отступ справа между жанрами */
+    display: inline-block; /* Размещаем жанры в одной строке */
+}
+
+
+.image-container {
+    width: 250px; /* Ширина блока 250px */
+    height: 250px; /* Высота блока 250px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc; /* Добавляем рамку для наглядности */
+}
+
+.book-cover {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sub-container h2 {
+    font-size: large;
+    color: white;
+    font-size: x-large;
+}
+
+.sub-container hr {
+    border-color: #ccc;
+    margin: 20px 0;
+}
+
+.sub-container h2 {
+    font-size: large;
+    color: white;
+    font-size: x-large;
+}
+
+.sub-container p {
+    font-size: large;
+    color: white;
+}
+
+.sub-container hr {
+    border-color: #ccc;
+    margin: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    height: 7%;
+    background-color: #f0f0f0; /* Цвет фона подвала */
+}
+
+.user-table-container table,
+.books-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table-container th,
+.books-table-container th,
+.user-table-container td,
+.books-table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.user-table-container th,
+.books-table-container th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.user-table-container tr:nth-child(even),
+.books-table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-table-container tr:hover,
+.books-table-container tr:hover {
+    background-color: #ddd;
+}
+
+.add-book-form {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 400px;
+}
+
+.add-book-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-book-form input[type="text"],
+.add-book-form input[type="number"],
+.add-book-form textarea {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.add-book-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-book-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.book-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.book-page {
+    width: 80%;
+    margin-bottom: 20px;
+    display: block;
+}
